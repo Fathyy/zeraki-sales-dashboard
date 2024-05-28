@@ -21,21 +21,25 @@ const Home = () => {
         {/* Body content */}
         <div className="home-content">
           <div className="sales-boxes responsive">
-            <div className="recent-sales box">
-              <div className="container mt-3">
-                <div className="row">
-                  <div
-                    id="export-csv"
-                    className="col-md-8 d-flex justify-content-between"
-                  >
-                    <div id="export-csv" className="col-md-3">
-                    
-                    </div>
-                    <div id="export-csv" className="col-md-3">
-                      
-                    </div>
-
-                  </div>
+            <div className="row">
+              <div className="col-md-3">
+                <div className="recent-sales box">
+                  <p>Collections</p>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="recent-sales box">
+                  <p>Signups</p>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="recent-sales box">
+                  <p>Total Revenue</p>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="recent-sales box">
+                  <p>Bounced cheques</p>
                 </div>
               </div>
             </div>

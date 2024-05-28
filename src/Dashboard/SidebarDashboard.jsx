@@ -14,7 +14,7 @@ const SidebarDashboard = ({ sidebar }) => {
           role="img"
         />
         <a href="/" style={{ textDecoration: "none" }}>
-          <span className="logo_name fw-bold">GreenLead</span>
+          <span className="logo_name fw-bold">Zeraki</span>
         </a>
       </div>
       <ul className="nav-links">

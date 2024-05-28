@@ -14,7 +14,7 @@ html{
   height: 100%;
   width: 260px;
   transition: all 0.3s ease;
-  background: #008000; 
+  background: #d42d6a; 
 }
 
 #greenwatch-logo{
@@ -143,10 +143,10 @@ nav .sidebar-button i{
   position: relative;
   padding-top: 104px;
 }
-.home-content .sales-boxes {
+/* .home-content .sales-boxes {
   display: flex;
   justify-content: space-between;
-}
+} */
 .home-content .sales-boxes .recent-sales {
   width: 100%;
   background: #fff;

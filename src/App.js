@@ -1,9 +1,20 @@
-import Home from './Dashboard/Home';
+import Home from "./Dashboard/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Schools from "./Schools/Schools";
+import Invoices from "./Schools/Invoices";
+import Collections from "./Schools/Collections";
 
 function App() {
   return (
     <div>
-      <Home/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/school" element={<Schools/>}/>
+          <Route path="/invoices" element={<Invoices/>}/>
+          <Route path="/collections" element={<Collections/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

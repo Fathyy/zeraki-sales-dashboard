@@ -63,6 +63,11 @@ const Home = () => {
                 <BarCharts/>
             </div>
           </div>
+
+          {/* Invoices */}
+          <div className="row">
+            
+          </div>
         </div>
       </section>
     </div>

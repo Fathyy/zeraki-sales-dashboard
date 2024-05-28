@@ -39,5 +39,26 @@
         "Secondary" : 100,
         "IGCSE" : 40
       }
+    ],
+
+    "schools": [
+      {
+        "name": "Maplewood Academy"
+      },
+      {
+        "name": "Riverside High School"
+      },
+      {
+        "name": "Evergreen Institute"
+      },
+      {
+        "name": "Cedar Valley College"
+      },
+      {
+        "name": "Pine Hill Elementary"
+      },
+      {
+        "name": "Summit Preparatory School"
+      }
     ]
   }

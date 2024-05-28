@@ -1,0 +1,242 @@
+/* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+  overflow-x: hidden;
+}
+.sidebar{
+  position: fixed;
+  height: 100%;
+  width: 260px;
+  transition: all 0.3s ease;
+  background: #008000; 
+}
+
+#greenwatch-logo{
+    margin-top: 0%;
+}
+#app-table{
+  font-size: 12px;
+}
+#signout{
+  background-color: #008000;
+  border: none;
+}
+#search-input{
+  box-shadow: rgba(80, 165, 98, 0.842) 0px 2px 8px 0px;
+ 
+}
+.sidebar.active{
+  width: 18px;
+}
+/* .sidebar.active .nav-links{
+  display: none;
+  
+} */
+.sidebar.active #greenwatch-logo{
+  display: none;
+}
+
+.sidebar .logo-details{
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details img{
+  margin-left: 8%;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.sidebar .nav-links{
+  margin-top: 15px;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  height: 60px;
+}
+.sidebar .nav-links li a{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li a.active{
+  background: white;
+}
+.sidebar .nav-links li a:hover{
+  background: white;
+}
+#register-dashboard:hover{
+  background: #008000;
+}
+.sidebar .nav-links li i{
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+}
+.sidebar .nav-links li a .links_name{
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.sidebar .nav-links .log_out{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.home-section{
+  position: relative;
+  background: #f5f5f5;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+
+}
+.sidebar.active ~ .home-section{
+  width: calc(100% - 40px);
+  left: 40px;
+}
+.home-section nav{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .home-section nav{
+  left: 60px;
+  width: calc(100% - 60px);
+}
+.home-section nav .sidebar-button{
+  display: flex;
+  font-size: 26px;
+  font-weight: 500;
+}
+nav .sidebar-button i{
+  font-size: 35px;
+  margin-right: 10px;
+}
+.home-section .home-content{
+  position: relative;
+  padding-top: 104px;
+}
+.home-content .sales-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+.home-content .sales-boxes .recent-sales {
+  width: 100%;
+  background: #fff;
+  padding: 20px 30px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgb(173, 206, 173);
+}
+.recent-sales .container{
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .sidebar{
+    width: 0;
+    display: none;
+   
+  }
+  .sidebar.active{
+    display: block;
+    background: rgb(28, 134, 28);
+    width: 220px;
+  } 
+  .sidebar.active ~ .home-section {
+    /* width: calc(100% - 220px); */
+    overflow: hidden;
+    left: 220px;
+  }
+
+  .sidebar.active ~ .home-section nav {
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+  .sidebar.active .nav-links{
+    display: block;
+    
+  }
+  .sidebar.active #greenwatch-logo{
+    display: flex;
+    
+  }
+  .home-section{
+    width: 100%;
+    left: 0;
+
+  }
+  .home-section nav{
+    width: 100%;
+    left: 0;
+  }
+  #add-trees{
+    margin-left: 5%;
+    background-color: #008000;
+  }
+  #export-csv{
+    margin-bottom: 5%;
+  }
+  nav .sidebar-button ,
+  nav .profile-details .admin_name,
+  nav .profile-details i{
+    display: none;
+  }
+  .home-section nav .profile-details{
+    height: 50px;
+    min-width: 40px;
+  }
+  .home-content .sales-boxes .sales-details{
+    width: 560px;
+  }
+}  
+
+/* Settings */
+.settings{
+  padding: 15px; 
+}
+ .settings label {
+  margin: 10px ;
+  
+  font-weight: 600;
+ }
+.settings input {
+  padding: 10px;
+  width: 100%;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  margin-left: 30px;
+  padding: 10px 20px;
+}
+ 

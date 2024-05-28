@@ -11,21 +11,14 @@ import {
 const COLORS = ["#0088FE", "#00C49F"];
 
 const PieFinance = ({ data }) => {
+  const firstEntity = data[1] || {}; 
+
   const chartData = [
-    { name: "Goal", value: data[1]?.Goal || 0 }, 
-    { name: "Actual", value: data[1]?.Actual || 0 },
+    { name: "Goal", value: firstEntity.Goal || 0 }, 
+    { name: "Actual", value: firstEntity.Actual || 0 }, 
   ];
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        marginBottom: "1.5rem",
-        padding: "1rem",
-        boxShadow: "0.5px 1px 3px 2px rgba(80, 165, 98, 0.5)",
-        borderRadius: "0.5rem",
-      }}
-    >
+<>
       <h6
         style={{
           color: "#717171",
@@ -62,7 +55,7 @@ const PieFinance = ({ data }) => {
           />
         </PieChart>
       </ResponsiveContainer>
-    </div>
+      </>
   );
 };
 

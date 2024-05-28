@@ -11,22 +11,16 @@ import {
 const COLORS = ["#0088FE", "#00C49F"];
 
 const PieAnalytics = ({ data }) => {
+
+  const firstEntity = data[0] || {}; 
+
   const chartData = [
-    { name: "Goal", value: data[0]?.Goal || 0 }, 
-    { name: "Actual", value: data[0]?.Actual || 0 },
+    { name: "Goal", value: firstEntity.Goal || 0 }, 
+    { name: "Actual", value: firstEntity.Actual || 0 }, 
   ];
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        marginBottom: "1.5rem",
-        padding: "1rem",
-        boxShadow: "0.5px 1px 3px 2px rgba(80, 165, 98, 0.5)",
-        borderRadius: "0.5rem",
-      }}
-    >
+    <>
       <h6
         style={{
           color: "#717171",
@@ -35,10 +29,10 @@ const PieAnalytics = ({ data }) => {
           textAlign: "center",
         }}
       >
-       Zeraki Analytics
+        Zeraki Analytics
       </h6>
       <ResponsiveContainer width="100%" height="80%">
-        <PieChart >
+        <PieChart>
           <Pie
             data={chartData}
             cx="50%"
@@ -51,7 +45,7 @@ const PieAnalytics = ({ data }) => {
             {chartData.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
+                fill={COLORS[index % COLORS.length]} 
               />
             ))}
           </Pie>
@@ -59,11 +53,11 @@ const PieAnalytics = ({ data }) => {
           <Legend
             verticalAlign="top"
             align="left"
-            wrapperStyle={{ fontSize: "10px", paddingBottom: '20px' }} // Adjust this value to change the font size
+            wrapperStyle={{ fontSize: "10px", paddingBottom: "20px" }}
           />
         </PieChart>
       </ResponsiveContainer>
-    </div>
+    </>
   );
 };
 

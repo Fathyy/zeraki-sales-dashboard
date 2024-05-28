@@ -18,5 +18,26 @@
         "Goal": 100,
         "Actual": 150
       }
+    ],
+
+    "SignupBar": [
+      {
+        "id": 1,
+        "Primary" : 30,
+        "Secondary" : 40,
+        "IGCSE" : 60
+      },
+      {
+        "id": 2,
+        "Primary" : 100,
+        "Secondary" : 50,
+        "IGCSE" : 20
+      },
+      {
+        "id": 3,
+        "Primary" : 70,
+        "Secondary" : 100,
+        "IGCSE" : 40
+      }
     ]
   }

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Dashboard.css";
-import { Link } from "react-router-dom";
 
 const SidebarDashboard = ({ sidebar }) => {
   return (
@@ -14,36 +13,36 @@ const SidebarDashboard = ({ sidebar }) => {
           height="45"
           role="img"
         />
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <a href="/" style={{ textDecoration: "none" }}>
           <span className="logo_name fw-bold">GreenLead</span>
-        </Link>
+        </a>
       </div>
       <ul className="nav-links">
         <li>
-          <Link to="/esg">
+          <a href="/esg">
             <i className="bx bxs-briefcase-alt-2"></i>
             <span className="links_name">ESG Reports</span>
-          </Link>
+          </a>
         </li>
         <li>
-          <Link to="/carbon-projects">
+          <a href="/carbon-projects">
             <i className="bx bxs-edit-alt"></i>
             <span className="links_name">Carbon Projects</span>
-          </Link>
+          </a>
         </li>
             <li>
-              <Link to="/settings">
+              <a href="/settings">
                 <i className="bx bxs-pie-chart-alt-2"></i>
                 <span className="links_name">Settings</span>
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="#">
+              <a href="/#">
                 <i className="bx bx-log-out fw-bold fs-3"></i>
                 <span className="links_name fw-bold">
                   Logout
                 </span>
-              </Link>
+              </a>
             </li>
       </ul>
     </div>

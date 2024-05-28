@@ -150,13 +150,17 @@ nav .sidebar-button i{
 .home-content .sales-boxes .recent-sales {
   width: 100%;
   background: #fff;
-  padding: 20px 30px;
+  padding: 20px;
   margin: 0 20px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgb(173, 206, 173);
 }
 .recent-sales .container{
   display: block;
+}
+.card-icon{
+    color: #d42d6a;
+    font-size: 40px;
 }
 
 @media (max-width: 700px) {

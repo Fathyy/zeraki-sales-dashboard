@@ -1,0 +1,22 @@
+{
+    "signup": [
+      {
+        "id": 1,
+        "name": "Zeraki Analytics",
+        "Goal": 100,
+        "Actual signup": 50
+      },
+      {
+        "id": 2,
+        "name": "Zeraki Finance",
+        "Goal": 50,
+        "Actual signup": 80
+      },
+      {
+        "id": 3,
+        "name": "Zeraki Timetable",
+        "Goal": 100,
+        "Actual signup": 150
+      }
+    ]
+  }

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import "./Dashboard.css";
 import Navbar from "./Navbar";
 import SidebarDashboard from "./SidebarDashboard";
+import { BsCollection } from "react-icons/bs";
+import { SiGnuprivacyguard } from "react-icons/si";
+import { CiMoneyBill } from "react-icons/ci";
+import { GrDocumentPerformance } from "react-icons/gr";
 
 const Home = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -23,23 +27,27 @@ const Home = () => {
           <div className="sales-boxes responsive">
             <div className="row">
               <div className="col-md-3">
-                <div className="recent-sales box">
-                  <p>Collections</p>
+                <div className="recent-sales box d-flex justify-content-between">
+                    <BsCollection className="card-icon"/>
+                  <p>54 Collections Made</p>
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="recent-sales box">
-                  <p>Signups</p>
+                <div className="recent-sales box d-flex justify-content-between">
+                    <SiGnuprivacyguard className="card-icon"/>
+                  <p>20 School Signups</p>
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="recent-sales box">
-                  <p>Total Revenue</p>
+                <div className="recent-sales box d-flex justify-content-between">
+                    <CiMoneyBill className="card-icon"/>
+                  <p>30 Total Revenue Collected</p>
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="recent-sales box">
-                  <p>Bounced cheques</p>
+                <div className="recent-sales box d-flex justify-content-between">
+                    <GrDocumentPerformance className="card-icon"/>
+                  <p>10 Bounced cheques</p>
                 </div>
               </div>
             </div>

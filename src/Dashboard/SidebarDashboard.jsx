@@ -1,17 +1,17 @@
 import React from "react";
 import "./Dashboard.css";
+import  logo from '../assets/z-logo.jpg'
 
 const SidebarDashboard = ({ sidebar }) => {
   return (
     <div className={sidebar ? "sidebar active" : "sidebar"}>
       <div className="logo-details" id="greenwatch-logo">
         <img
-          src=""
-          alt=""
+          src={logo}
+          alt="logo"
           className="bi me-2"
           width="45"
           height="45"
-          role="img"
         />
         <a href="/" style={{ textDecoration: "none" }}>
           <span className="logo_name fw-bold">Zeraki</span>

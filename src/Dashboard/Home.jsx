@@ -6,6 +6,7 @@ import { BsCollection } from "react-icons/bs";
 import { SiGnuprivacyguard } from "react-icons/si";
 import { CiMoneyBill } from "react-icons/ci";
 import { GrDocumentPerformance } from "react-icons/gr";
+import Piecharts from "../components/Piecharts";
 
 const Home = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -50,6 +51,11 @@ const Home = () => {
                   <p>10 Bounced cheques</p>
                 </div>
               </div>
+            </div>
+
+            {/* piecharts */}
+            <div className="row">
+                <Piecharts/>
             </div>
           </div>
         </div>

@@ -11,9 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/school" element={<Schools />}>
-            <Route path=":schoolId" element={<SchoolDetails/>} />
-          </Route>
+          <Route path="/school" element={<Schools />} />
+          <Route path="/school/:schoolId" element={<SchoolDetails />} />
           <Route path="/invoices" element={<Invoices />} />
           <Route path="/collections" element={<Collections />} />
         </Routes>

@@ -19,8 +19,8 @@ const SchoolListTable = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h1 className="mb-4">List of Schools</h1>
+    <div>
+      <h5 className="mb-4">List of Schools</h5>
       <table className="table table-striped table-bordered">
         <thead className="thead-dark">
           <tr>
@@ -37,7 +37,7 @@ const SchoolListTable = () => {
                   className="btn btn-primary"
                   onClick={() => handleViewMore(school.id)}
                 >
-                  View More
+                  View Details
                 </button>
               </td>
             </tr>

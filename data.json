@@ -1,239 +1,260 @@
 {
-    "signup": [
-      {
-        "id": 1,
-        "name": "Zeraki Analytics",
-        "Goal": 100,
-        "Actual": 50
+  "signup": [
+    {
+      "id": "1",
+      "name": "Zeraki Analytics",
+      "Goal": 100,
+      "Actual": 50
+    },
+    {
+      "id": "2",
+      "name": "Zeraki Finance",
+      "Goal": 50,
+      "Actual": 80
+    },
+    {
+      "id": "3",
+      "name": "Zeraki Timetable",
+      "Goal": 100,
+      "Actual": 150
+    }
+  ],
+  "SignupBar": [
+    {
+      "id": "1",
+      "Primary": 30,
+      "Secondary": 40,
+      "IGCSE": 60
+    },
+    {
+      "id": "2",
+      "Primary": 100,
+      "Secondary": 50,
+      "IGCSE": 20
+    },
+    {
+      "id": "3",
+      "Primary": 70,
+      "Secondary": 100,
+      "IGCSE": 40
+    }
+  ],
+  "schools": [
+    {
+      "id": "1",
+      "name": "Maplewood Academy"
+    },
+    {
+      "id": "2",
+      "name": "Riverside High School"
+    },
+    {
+      "id": "3",
+      "name": "Evergreen Institute"
+    },
+    {
+      "id": "4",
+      "name": "Cedar Valley College"
+    },
+    {
+      "id": "5",
+      "name": "Pine Hill Elementary"
+    },
+    {
+      "id": "6",
+      "name": "Summit Preparatory School"
+    }
+  ],
+  "schoolsDetails": [
+    {
+      "id": "1",
+      "name": "Maplewood Academy",
+      "type": "Secondary",
+      "product": "Finance",
+      "county": "Nairobi",
+      "registration_date": "2021-08-15",
+      "contact_info": {
+        "email": "info@maplewoodacademy.edu",
+        "phone": "555-1234"
       },
-      {
-        "id": 2,
-        "name": "Zeraki Finance",
-        "Goal": 50,
-        "Actual": 80
+      "school_balance": 1500.75,
+      "invoices": [
+        {
+          "invoice_number": "INV-001",
+          "item": "Finance",
+          "creation_date": "2023-01-15",
+          "due_date": "2023-02-15",
+          "amount": 500,
+          "paid_amount": 200,
+          "balance": 300,
+          "status": "Pending"
+        },
+        {
+          "invoice_number": "INV-002",
+          "item": "Analytics",
+          "creation_date": "2023-03-01",
+          "due_date": "2023-04-01",
+          "amount": 1000,
+          "paid_amount": 1000,
+          "balance": 0,
+          "status": "Completed"
+        },
+        {
+          "item": "Finance",
+          "creation_date": "2024-04-15",
+          "due_date": "2024-05-08",
+          "amount": 4000,
+          "paid_amount": 2999,
+          "status": "Completed",
+          "balance": 1001,
+          "invoiceNumber": 1939
+        },
+        {
+          "item": "Timetable",
+          "creation_date": "2024-04-04",
+          "due_date": "2024-05-15",
+          "amount": 2500,
+          "paid_amount": 1500,
+          "status": "Pending",
+          "balance": 1000,
+          "invoice_number": "INV-948"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Riverside High School",
+      "type": "Secondary",
+      "product": "Analytics",
+      "county": "Kisumu",
+      "registration_date": "2019-06-12",
+      "contact_info": {
+        "email": "contact@riversidehigh.edu",
+        "phone": "555-5678"
       },
-      {
-        "id": 3,
-        "name": "Zeraki Timetable",
-        "Goal": 100,
-        "Actual": 150
-      }
-    ],
-
-    "SignupBar": [
-      {
-        "id": 1,
-        "Primary" : 30,
-        "Secondary" : 40,
-        "IGCSE" : 60
+      "school_balance": 2500,
+      "invoices": [
+        {
+          "invoice_number": "INV-003",
+          "item": "Analytics",
+          "creation_date": "2023-02-10",
+          "due_date": "2023-03-10",
+          "amount": 750,
+          "paid_amount": 500,
+          "balance": 250,
+          "status": "Pending"
+        },
+        {
+          "item": "Finance",
+          "creation_date": "2024-03-15",
+          "due_date": "2024-04-16",
+          "amount": 3500,
+          "paid_amount": 699,
+          "status": "Completed",
+          "balance": 2801,
+          "invoice_number": "INV-993"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Evergreen Institute",
+      "type": "IGCSE",
+      "product": "Timetable",
+      "county": "Mombasa",
+      "registration_date": "2020-09-23",
+      "contact_info": {
+        "email": "admin@evergreeninstitute.edu",
+        "phone": "555-8765"
       },
-      {
-        "id": 2,
-        "Primary" : 100,
-        "Secondary" : 50,
-        "IGCSE" : 20
+      "school_balance": 1800.5,
+      "invoices": [
+        {
+          "invoice_number": "INV-003",
+          "item": "Timetable",
+          "creation_date": "2023-02-10",
+          "due_date": "2023-03-10",
+          "amount": 750,
+          "paid_amount": 500,
+          "balance": 250,
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Cedar Valley College",
+      "type": "Secondary",
+      "product": "Finance",
+      "county": "Taveta",
+      "registration_date": "2018-04-30",
+      "contact_info": {
+        "email": "support@cedarvalleycollege.edu",
+        "phone": "555-4321"
       },
-      {
-        "id": 3,
-        "Primary" : 70,
-        "Secondary" : 100,
-        "IGCSE" : 40
-      }
-    ],
-
-    "schools": [
-      {
-        "id": 1,
-        "name": "Maplewood Academy"
+      "school_balance": 3000,
+      "invoices": [
+        {
+          "invoice_number": "INV-003",
+          "item": "Finance",
+          "creation_date": "2023-02-10",
+          "due_date": "2023-03-10",
+          "amount": 750,
+          "paid_amount": 500,
+          "balance": 250,
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Pine Hill Elementary",
+      "type": "Primary",
+      "product": "Analytics",
+      "county": "Kericho",
+      "registration_date": "2022-01-05",
+      "contact_info": {
+        "email": "info@pinehillelementary.edu",
+        "phone": "555-6789"
       },
-      {
-        "id": 2,
-        "name": "Riverside High School"
+      "school_balance": 1200.25,
+      "invoices": [
+        {
+          "invoice_number": "INV-003",
+          "item": "Analytics",
+          "creation_date": "2023-02-10",
+          "due_date": "2023-03-10",
+          "amount": 750,
+          "paid_amount": 500,
+          "balance": 250,
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Summit Preparatory School",
+      "type": "IGCSE",
+      "product": "Timetable",
+      "county": "Garissa",
+      "registration_date": "2020-03-14",
+      "contact_info": {
+        "email": "contact@summitprep.edu",
+        "phone": "555-3456"
       },
-      {
-        "id": 3,
-        "name": "Evergreen Institute"
-      },
-      {
-        "id": 4,
-        "name": "Cedar Valley College"
-      },
-      {
-        "id": 5,
-        "name": "Pine Hill Elementary"
-      },
-      {
-        "id": 6,
-        "name": "Summit Preparatory School"
-      }
-    ],
-
-        "schoolsDetails": [
-          {
-            "id": 1,
-            "name": "Maplewood Academy",
-            "type": "Secondary",
-            "product": "Finance",
-            "county": "Nairobi",
-            "registration_date": "2021-08-15",
-            "contact_info": {
-              "email": "info@maplewoodacademy.edu",
-              "phone": "555-1234"
-            },
-            "school_balance": 1500.75,
-            "invoices": [
-              {
-                "invoice_number": "INV-001",
-                "item": "Finance",
-                "creation_date": "2023-01-15",
-                "due_date": "2023-02-15",
-                "amount": 500.00,
-                "paid_amount": 200.00,
-                "balance": 300.00,
-                "status": "Pending"
-              },
-              {
-                "invoice_number": "INV-002",
-                "item": "Analytics",
-                "creation_date": "2023-03-01",
-                "due_date": "2023-04-01",
-                "amount": 1000.00,
-                "paid_amount": 1000.00,
-                "balance": 0.00,
-                "status": "Completed"
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "name": "Riverside High School",
-            "type": "Secondary",
-            "product": "Analytics",
-            "county": "Kisumu",
-            "registration_date": "2019-06-12",
-            "contact_info": {
-              "email": "contact@riversidehigh.edu",
-              "phone": "555-5678"
-            },
-            "school_balance": 2500.00,
-            "invoices": [
-              {
-                "invoice_number": "INV-003",
-                "item": "Analytics",
-                "creation_date": "2023-02-10",
-                "due_date": "2023-03-10",
-                "amount": 750.00,
-                "paid_amount": 500.00,
-                "balance": 250.00,
-                "status": "Pending"
-              }
-            ]
-          },
-
-          {
-            "id": 3,
-          "name": "Evergreen Institute",
-          "type": "IGCSE",
-          "product": "Timetable",
-          "county": "Mombasa",
-          "registration_date": "2020-09-23",
-          "contact_info": {
-            "email": "admin@evergreeninstitute.edu",
-            "phone": "555-8765"
-          },
-          "school_balance": 1800.50,
-            "invoices": [
-              {
-                "invoice_number": "INV-003",
-                "item": "Timetable",
-                "creation_date": "2023-02-10",
-                "due_date": "2023-03-10",
-                "amount": 750.00,
-                "paid_amount": 500.00,
-                "balance": 250.00,
-                "status": "Pending"
-              }
-            ]
-          },
-
-          {
-            "id": 4,
-          "name": "Cedar Valley College",
-          "type": "Secondary",
-          "product": "Finance",
-          "county": "Taveta",
-          "registration_date": "2018-04-30",
-          "contact_info": {
-            "email": "support@cedarvalleycollege.edu",
-            "phone": "555-4321"
-          },
-          "school_balance": 3000.00,
-            "invoices": [
-              {
-                "invoice_number": "INV-003",
-                "item": "Finance",
-                "creation_date": "2023-02-10",
-                "due_date": "2023-03-10",
-                "amount": 750.00,
-                "paid_amount": 500.00,
-                "balance": 250.00,
-                "status": "Pending"
-              }
-            ]
-          },
-
-          {
-            "id": 5,
-          "name": "Pine Hill Elementary",
-          "type": "Primary",
-          "product": "Analytics",
-          "county": "Kericho",
-          "registration_date": "2022-01-05",
-          "contact_info": {
-            "email": "info@pinehillelementary.edu",
-            "phone": "555-6789"
-          },
-          "school_balance": 1200.25,
-            "invoices": [
-              {
-                "invoice_number": "INV-003",
-                "item": "Analytics",
-                "creation_date": "2023-02-10",
-                "due_date": "2023-03-10",
-                "amount": 750.00,
-                "paid_amount": 500.00,
-                "balance": 250.00,
-                "status": "Pending"
-              }
-            ]
-          },
-
-          {
-            "id": 6,
-          "name": "Summit Preparatory School",
-          "type": "IGCSE",
-          "product": "Timetable",
-          "county": "Garissa",
-          "registration_date": "2020-03-14",
-          "contact_info": {
-            "email": "contact@summitprep.edu",
-            "phone": "555-3456"
-          },
-          "school_balance": 2750.40,
-            "invoices": [
-              {
-                "invoice_number": "INV-003",
-                "item": "Timetable",
-                "creation_date": "2023-02-10",
-                "due_date": "2023-03-10",
-                "amount": 750.00,
-                "paid_amount": 500.00,
-                "balance": 250.00,
-                "status": "Pending"
-              }
-            ]
-          }
-        ]
-      
-    
-  }
+      "school_balance": 2750.4,
+      "invoices": [
+        {
+          "invoice_number": "INV-003",
+          "item": "Timetable",
+          "creation_date": "2023-02-10",
+          "due_date": "2023-03-10",
+          "amount": 750,
+          "paid_amount": 500,
+          "balance": 250,
+          "status": "Pending"
+        }
+      ]
+    }
+  ]
+}

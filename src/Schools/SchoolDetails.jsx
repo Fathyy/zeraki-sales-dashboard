@@ -3,25 +3,25 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SidebarDashboard from "../Dashboard/SidebarDashboard";
 import Navbar from "../Dashboard/Navbar";
+import CreateInvoiceModal from "../components/CreateInvoiceModal";
+import { MdModeEdit } from "react-icons/md";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { CiEdit } from "react-icons/ci";
 
 const SchoolDetails = () => {
   const { schoolId } = useParams();
   const [school, setSchool] = useState(null);
   const [error, setError] = useState(null);
-
   const [sidebar, setSidebar] = useState(false);
+  const [invoices, setInvoices] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3030/schoolsDetails")
+      .get(`http://localhost:3030/schoolsDetails/${schoolId}`)
       .then((res) => {
-        const schoolDetails = res.data.find(
-          (school) => school.id === parseInt(schoolId)
-        );
+        const schoolDetails = res.data;
         if (schoolDetails) {
           setSchool(schoolDetails);
+          setInvoices(schoolDetails.invoices);
         } else {
           setError("School not found");
         }
@@ -31,6 +31,11 @@ const SchoolDetails = () => {
         setError("Error fetching school details");
       });
   }, [schoolId]);
+
+  const handleSaveInvoice = (newInvoice) => {
+    const updatedInvoices = [...invoices, newInvoice];
+    setInvoices(updatedInvoices);
+  };
 
   if (error) {
     return (
@@ -57,10 +62,7 @@ const SchoolDetails = () => {
     <div>
       <SidebarDashboard sidebar={sidebar} />
       <section className="home-section">
-        {/* Dashboard Navbar */}
         <Navbar toggleSidebar={toggleSidebar} />
-
-        {/* Body content */}
         <div className="home-content">
           <div className="sales-boxes responsive">
             <div className="container">
@@ -95,47 +97,43 @@ const SchoolDetails = () => {
               </table>
 
               {/* Invoices for a particular school */}
-              <div className="mt-5">
-                <div className="d-flex justify-content-between">
-                  <h5 className="mb-4">{school.name} Invoices</h5>
-                  <button className="btn btn-primary btn-sm mb-3">
-                    Create Invoice
-                  </button>
-                </div>
-                <table className="table table-striped table-bordered">
-                  <thead className="thead-dark">
-                    <tr>
-                      <th>No</th>
-                      <th>Item</th>
-                      <th>Creation Date</th>
-                      <th>Due Date</th>
-                      <th>Amount</th>
-                      <th>Paid Amount</th>
-                      <th>Balance</th>
-                      <th>Status</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {school.invoices.map((invoice, index) => (
-                      <tr key={index}>
-                        <td>{invoice.invoice_number}</td>
-                        <td>{invoice.item}</td>
-                        <td>{invoice.creation_date}</td>
-                        <td>{invoice.due_date}</td>
-                        <td>${invoice.amount.toFixed(2)}</td>
-                        <td>${invoice.paid_amount.toFixed(2)}</td>
-                        <td>${invoice.balance.toFixed(2)}</td>
-                        <td>{invoice.status}</td>
-                        <td>
-                            <FaRegTrashAlt/>
-                            <CiEdit style={{marginLeft:'8px'}}/>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="d-flex justify-content-between mt-4">
+                <h5>{school.name} Invoices</h5>
+                <CreateInvoiceModal schoolId={schoolId} onSave={handleSaveInvoice} />
               </div>
+              <table className="table table-striped table-bordered">
+                <thead className="thead-dark">
+                  <tr>
+                    <th>No</th>
+                    <th>Item</th>
+                    <th>Creation Date</th>
+                    <th>Due Date</th>
+                    <th>Amount</th>
+                    <th>Paid Amount</th>
+                    <th>Balance</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {invoices.map((invoice, index) => (
+                    <tr key={index}>
+                      <td>{invoice.invoice_number}</td>
+                      <td>{invoice.item}</td>
+                      <td>{invoice.creation_date}</td>
+                      <td>{invoice.due_date}</td>
+                      <td>${invoice.amount.toFixed(2)}</td>
+                      <td>${invoice.paid_amount.toFixed(2)}</td>
+                      <td>${invoice.balance.toFixed(2)}</td>
+                      <td>{invoice.status}</td>
+                      <td>
+                        <MdModeEdit style={{ marginRight: "8px" }} />
+                        <FaRegTrashAlt />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Schools from "./Schools/Schools";
 import Invoices from "./Schools/Invoices";
 import Collections from "./Schools/Collections";
+import SchoolDetails from "./Schools/SchoolDetails";
 
 function App() {
   return (
@@ -10,9 +11,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/school" element={<Schools/>}/>
-          <Route path="/invoices" element={<Invoices/>}/>
-          <Route path="/collections" element={<Collections/>}/>
+          <Route path="/school" element={<Schools />}>
+            <Route path=":schoolId" element={<SchoolDetails/>} />
+          </Route>
+          <Route path="/invoices" element={<Invoices />} />
+          <Route path="/collections" element={<Collections />} />
         </Routes>
       </BrowserRouter>
     </div>

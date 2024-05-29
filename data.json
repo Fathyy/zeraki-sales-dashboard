@@ -98,26 +98,6 @@
           "paid_amount": 1000,
           "balance": 0,
           "status": "Completed"
-        },
-        {
-          "item": "Finance",
-          "creation_date": "2024-04-15",
-          "due_date": "2024-05-08",
-          "amount": 4000,
-          "paid_amount": 2999,
-          "status": "Completed",
-          "balance": 1001,
-          "invoiceNumber": 1939
-        },
-        {
-          "item": "Timetable",
-          "creation_date": "2024-04-04",
-          "due_date": "2024-05-15",
-          "amount": 2500,
-          "paid_amount": 1500,
-          "status": "Pending",
-          "balance": 1000,
-          "invoice_number": "INV-948"
         }
       ]
     },
@@ -136,9 +116,9 @@
       "invoices": [
         {
           "invoice_number": "INV-003",
-          "item": "Analytics",
-          "creation_date": "2023-02-10",
-          "due_date": "2023-03-10",
+          "item": "Timetable",
+          "creation_date": "2023-02-09",
+          "due_date": "2023-04-01",
           "amount": 750,
           "paid_amount": 500,
           "balance": 250,
@@ -171,7 +151,7 @@
       "invoices": [
         {
           "invoice_number": "INV-003",
-          "item": "Timetable",
+          "item": "Finance",
           "creation_date": "2023-02-10",
           "due_date": "2023-03-10",
           "amount": 750,

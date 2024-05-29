@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import SidebarDashboard from "../Dashboard/SidebarDashboard";
 import Navbar from "../Dashboard/Navbar";
 import CreateInvoiceModal from "../components/CreateInvoiceModal";
-import { MdModeEdit } from "react-icons/md";
-import { FaRegTrashAlt } from "react-icons/fa";
+import EditInvoiceModal from "../components/EditInvoiceModal";
+// import { MdModeEdit } from "react-icons/md";
+// import { FaRegTrashAlt } from "react-icons/fa";
 
 const SchoolDetails = () => {
   const { schoolId } = useParams();
@@ -32,9 +33,23 @@ const SchoolDetails = () => {
       });
   }, [schoolId]);
 
+
   const handleSaveInvoice = (newInvoice) => {
     const updatedInvoices = [...invoices, newInvoice];
     setInvoices(updatedInvoices);
+  };
+
+  const handleUpdateInvoice = (updatedInvoice) => {
+    const updatedInvoices = invoices.map((invoice) =>
+      invoice.invoice_number === updatedInvoice.invoice_number ? updatedInvoice : invoice
+    );
+    setInvoices(updatedInvoices);
+    axios
+      .patch(`http://localhost:3030/schoolsDetails/${schoolId}`, {
+        invoices: updatedInvoices,
+      })
+      .then((res) => console.log("Invoice updated"))
+      .catch((err) => console.error(err));
   };
 
   if (error) {
@@ -57,6 +72,18 @@ const SchoolDetails = () => {
   const toggleSidebar = () => {
     setSidebar(!sidebar);
   };
+
+  const handleDeleteInvoice = (invoiceNumber) => {
+    const updatedInvoices = invoices.filter(invoice => invoice.invoice_number !== invoiceNumber);
+    setInvoices(updatedInvoices);
+    axios
+      .patch(`http://localhost:3030/schoolsDetails/${schoolId}`, {
+        invoices: updatedInvoices,
+      })
+      .then((res) => console.log("Invoice deleted"))
+      .catch((err) => console.error(err));
+  };
+  
 
   return (
     <div>
@@ -99,7 +126,10 @@ const SchoolDetails = () => {
               {/* Invoices for a particular school */}
               <div className="d-flex justify-content-between mt-4">
                 <h5>{school.name} Invoices</h5>
-                <CreateInvoiceModal schoolId={schoolId} onSave={handleSaveInvoice} />
+                <CreateInvoiceModal
+                  schoolId={schoolId}
+                  onSave={handleSaveInvoice}
+                />
               </div>
               <table className="table table-striped table-bordered">
                 <thead className="thead-dark">
@@ -127,8 +157,13 @@ const SchoolDetails = () => {
                       <td>${invoice.balance.toFixed(2)}</td>
                       <td>{invoice.status}</td>
                       <td>
-                        <MdModeEdit style={{ marginRight: "8px" }} />
-                        <FaRegTrashAlt />
+                        <EditInvoiceModal invoice={invoice} onSave={handleUpdateInvoice}/>
+                        <button
+                          className="btn btn-danger ml-2"
+                          onClick={() => handleDeleteInvoice(invoice.invoice_number)}
+                        >
+                          <i className="fa-solid fa-trash"></i>
+                        </button>
                       </td>
                     </tr>
                   ))}

@@ -14,11 +14,11 @@ const PieFinance = ({ data }) => {
   const firstEntity = data[1] || {}; 
 
   const chartData = [
-    { name: "Goal", value: firstEntity.Goal || 0 }, 
-    { name: "Actual", value: firstEntity.Actual || 0 }, 
+    { name: "Goal signups", value: firstEntity.Goal || 0 }, 
+    { name: "Actual signups", value: firstEntity.Actual || 0 }, 
   ];
   return (
-<>
+<div style={{ height: 200, width: 200 }}>
       <h6
         style={{
           color: "#717171",
@@ -29,14 +29,14 @@ const PieFinance = ({ data }) => {
       >
         Zeraki Finance
       </h6>
-      <ResponsiveContainer width="100%" height="80%">
+      <ResponsiveContainer width="100%" height="100%">
         <PieChart >
           <Pie
             data={chartData}
             cx="50%"
             cy="50%"
             labelLine={false}
-            outerRadius={130}
+            outerRadius={70}
             fill="#8884d8"
             dataKey="value"
           >
@@ -55,7 +55,7 @@ const PieFinance = ({ data }) => {
           />
         </PieChart>
       </ResponsiveContainer>
-      </>
+      </div>
   );
 };
 

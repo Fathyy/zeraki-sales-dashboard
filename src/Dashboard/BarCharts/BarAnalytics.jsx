@@ -13,14 +13,16 @@ import {
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const BarAnalytics = ({ data }) => {
-    const chartData = [
-        { name: "Primary", value: data[0]?.Primary || 0 }, 
-        { name: "Secondary", value: data[0]?.Secondary || 0 },
-        { name: "IGCSE", value: data[0]?.IGCSE || 0 },
-      ];
+  const firstEntity = data[0] || {};
+
+  const chartData = [
+    { name: "Primary", value: firstEntity.Primary || 0 },
+    { name: "Secondary", value: firstEntity.Secondary || 0 },
+    { name: "IGCSE", value: firstEntity.IGCSE || 0 },
+  ];
 
   return (
-    <>
+    <div>
       <h6
         style={{
           color: "#717171",
@@ -31,6 +33,7 @@ const BarAnalytics = ({ data }) => {
       >
         Zeraki Analytics signups
       </h6>
+      <div style={{ height: "400px", width: "100%" }}>
       <ResponsiveContainer width="100%" height="80%">
         <BarChart
           data={chartData}
@@ -52,10 +55,11 @@ const BarAnalytics = ({ data }) => {
             align="left"
             wrapperStyle={{ fontSize: "10px", paddingBottom: '20px' }} // Adjust this value to change the font size
           />
-          <Bar dataKey="Energy" fill={COLORS[0]} name="Emission Levels" />
+          <Bar dataKey="value" fill={COLORS[0]} name="School signups" />
         </BarChart>
       </ResponsiveContainer>
-      </>
+      </div>
+      </div>
   );
 };
 

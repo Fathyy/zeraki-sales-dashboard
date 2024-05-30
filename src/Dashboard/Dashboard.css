@@ -155,12 +155,23 @@ nav .sidebar-button i{
   border-radius: 12px;
   box-shadow: 0 5px 10px rgb(173, 206, 173);
 }
+.home-content .sales-boxes .recent-sales:hover{
+  background: #d42d6a;
+}
 .recent-sales .container{
   display: block;
 }
 .card-icon{
     color: #d42d6a;
     font-size: 40px;
+}
+.card-text {
+  color: black;
+}
+
+.home-content .sales-boxes .recent-sales:hover .card-icon,
+.home-content .sales-boxes .recent-sales:hover .card-text {
+  color: #fff;
 }
 
 @media (max-width: 700px) {

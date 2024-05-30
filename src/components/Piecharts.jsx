@@ -1,24 +1,36 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import PieAnalytics from '../Dashboard/Piecharts/PieAnalytics'
-import PieFinance from '../Dashboard/Piecharts/PieFinance'
-import PieTimetable from '../Dashboard/Piecharts/PieTimetable'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import PieAnalytics from "../Dashboard/Piecharts/PieAnalytics";
+import PieFinance from "../Dashboard/Piecharts/PieFinance";
+import PieTimetable from "../Dashboard/Piecharts/PieTimetable";
 
 const Piecharts = () => {
-    const [signupData, setSignupData] = useState([])
+  const [signupData, setSignupData] = useState([]);
 
-    useEffect(() => {
-        axios.get('http://localhost:3030/signup')
-        .then(res => setSignupData(res.data))
-        .catch(err => console.log(err))
-    }, [])
+  useEffect(() => {
+    axios
+      .get("http://localhost:3030/signup")
+      .then((res) => setSignupData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
-    <div>
-        <PieAnalytics data={signupData}/>
-        <PieFinance data={signupData}/>
-        <PieTimetable data={signupData}/>
-    </div>
-  )
-}
+    <>
+      <div className="row">
+        <div className="col-md-6">
+          <PieAnalytics data={signupData} />
+        </div>
+        <div className="col-md-6">
+          <PieFinance data={signupData} />
+        </div>
+      </div>
+      <div className="row mt-5">
+        <div className="col-md-4">
+          <PieTimetable data={signupData} />
+        </div>
+      </div>
 
-export default Piecharts
+    </>
+  );
+};
+
+export default Piecharts;

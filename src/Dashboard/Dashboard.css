@@ -1,70 +1,78 @@
 /* Googlefont Poppins CDN Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-html{
+html {
   overflow-x: hidden;
 }
-.sidebar{
+.highlight-button {
+  background: #d42d6a;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.sidebar {
   position: fixed;
   height: 100%;
   width: 260px;
   transition: all 0.3s ease;
-  background: #d42d6a; 
+  background: #d42d6a;
 }
 
-#greenwatch-logo{
-    margin-top: 0%;
+#greenwatch-logo {
+  margin-top: 0%;
 }
-#app-table{
+#app-table {
   font-size: 12px;
 }
-#signout{
+#signout {
   background-color: #008000;
   border: none;
 }
-#search-input{
+#search-input {
   box-shadow: rgba(80, 165, 98, 0.842) 0px 2px 8px 0px;
- 
 }
-.sidebar.active{
+.sidebar.active {
   width: 18px;
 }
 /* .sidebar.active .nav-links{
   display: none;
   
 } */
-.sidebar.active #greenwatch-logo{
+.sidebar.active #greenwatch-logo {
   display: none;
 }
 
-.sidebar .logo-details{
+.sidebar .logo-details {
   height: 80px;
   display: flex;
   align-items: center;
 }
-.sidebar .logo-details img{
+.sidebar .logo-details img {
   margin-left: 8%;
 }
-.sidebar .logo-details .logo_name{
+.sidebar .logo-details .logo_name {
   color: #fff;
   font-size: 24px;
   font-weight: 500;
   text-decoration: none;
 }
-.sidebar .nav-links{
+.sidebar .nav-links {
   margin-top: 15px;
 }
-.sidebar .nav-links li{
+.sidebar .nav-links li {
   position: relative;
   list-style: none;
   height: 60px;
 }
-.sidebar .nav-links li a{
+.sidebar .nav-links li a {
   height: 100%;
   width: 100%;
   display: flex;
@@ -72,46 +80,45 @@ html{
   text-decoration: none;
   transition: all 0.4s ease;
 }
-.sidebar .nav-links li a.active{
+.sidebar .nav-links li a.active {
   background: white;
 }
-.sidebar .nav-links li a:hover{
+.sidebar .nav-links li a:hover {
   background: white;
 }
-#register-dashboard:hover{
+#register-dashboard:hover {
   background: #008000;
 }
-.sidebar .nav-links li i{
+.sidebar .nav-links li i {
   min-width: 60px;
   text-align: center;
   font-size: 18px;
   color: black;
 }
-.sidebar .nav-links li a .links_name{
+.sidebar .nav-links li a .links_name {
   color: black;
   font-size: 15px;
   font-weight: 400;
   white-space: nowrap;
 }
-.sidebar .nav-links .log_out{
+.sidebar .nav-links .log_out {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-.home-section{
+.home-section {
   position: relative;
   background: #f5f5f5;
   min-height: 100vh;
   width: calc(100% - 240px);
   left: 240px;
   transition: all 0.5s ease;
-
 }
-.sidebar.active ~ .home-section{
+.sidebar.active ~ .home-section {
   width: calc(100% - 40px);
   left: 40px;
 }
-.home-section nav{
+.home-section nav {
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -126,20 +133,20 @@ html{
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
 }
-.sidebar.active ~ .home-section nav{
+.sidebar.active ~ .home-section nav {
   left: 60px;
   width: calc(100% - 60px);
 }
-.home-section nav .sidebar-button{
+.home-section nav .sidebar-button {
   display: flex;
   font-size: 26px;
   font-weight: 500;
 }
-nav .sidebar-button i{
+nav .sidebar-button i {
   font-size: 35px;
   margin-right: 10px;
 }
-.home-section .home-content{
+.home-section .home-content {
   position: relative;
   padding-top: 104px;
 }
@@ -155,15 +162,15 @@ nav .sidebar-button i{
   border-radius: 12px;
   box-shadow: 0 5px 10px rgb(173, 206, 173);
 }
-.home-content .sales-boxes .recent-sales:hover{
+.home-content .sales-boxes .recent-sales:hover {
   background: #d42d6a;
 }
-.recent-sales .container{
+.recent-sales .container {
   display: block;
 }
-.card-icon{
-    color: #d42d6a;
-    font-size: 40px;
+.card-icon {
+  color: #d42d6a;
+  font-size: 40px;
 }
 .card-text {
   color: black;
@@ -175,16 +182,15 @@ nav .sidebar-button i{
 }
 
 @media (max-width: 700px) {
-  .sidebar{
+  .sidebar {
     width: 0;
     display: none;
-   
   }
-  .sidebar.active{
+  .sidebar.active {
     display: block;
     background: rgb(28, 134, 28);
     width: 220px;
-  } 
+  }
   .sidebar.active ~ .home-section {
     /* width: calc(100% - 220px); */
     overflow: hidden;
@@ -195,53 +201,50 @@ nav .sidebar-button i{
     width: calc(100% - 220px);
     left: 220px;
   }
-  .sidebar.active .nav-links{
+  .sidebar.active .nav-links {
     display: block;
-    
   }
-  .sidebar.active #greenwatch-logo{
+  .sidebar.active #greenwatch-logo {
     display: flex;
-    
   }
-  .home-section{
-    width: 100%;
-    left: 0;
-
-  }
-  .home-section nav{
+  .home-section {
     width: 100%;
     left: 0;
   }
-  #add-trees{
+  .home-section nav {
+    width: 100%;
+    left: 0;
+  }
+  #add-trees {
     margin-left: 5%;
     background-color: #008000;
   }
-  #export-csv{
+  #export-csv {
     margin-bottom: 5%;
   }
-  nav .sidebar-button ,
+  nav .sidebar-button,
   nav .profile-details .admin_name,
-  nav .profile-details i{
+  nav .profile-details i {
     display: none;
   }
-  .home-section nav .profile-details{
+  .home-section nav .profile-details {
     height: 50px;
     min-width: 40px;
   }
-  .home-content .sales-boxes .sales-details{
+  .home-content .sales-boxes .sales-details {
     width: 560px;
   }
-}  
+}
 
 /* Settings */
-.settings{
-  padding: 15px; 
+.settings {
+  padding: 15px;
 }
- .settings label {
-  margin: 10px ;
-  
+.settings label {
+  margin: 10px;
+
   font-weight: 600;
- }
+}
 .settings input {
   padding: 10px;
   width: 100%;
@@ -254,4 +257,3 @@ input[type="submit"] {
   margin-left: 30px;
   padding: 10px 20px;
 }
- 

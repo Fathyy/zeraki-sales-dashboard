@@ -40,8 +40,17 @@ const EditInvoiceModal = ({ invoice, onSave }) => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Edit Invoice</h5>
-                <button type="button" className="close" onClick={closeModal}>
-                  <span>&times;</span>
+                <button
+                  type="button"
+                  className="close"
+                  style={{
+                    border: "none",
+                    outline: "none",
+                    background: "transparent",
+                  }}
+                  onClick={closeModal}
+                >
+                  <span style={{ fontSize: "25px" }}>&times;</span>
                 </button>
               </div>
               <div className="modal-body">

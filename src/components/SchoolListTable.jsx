@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../Dashboard/Dashboard.css'
 
 const SchoolListTable = () => {
   const [schoolsData, setSchoolsData] = useState([]);
@@ -36,7 +37,7 @@ const SchoolListTable = () => {
                 <td>{school.name}</td>
                 <td>
                   <button
-                    className="btn btn-primary"
+                    className="highlight-button"
                     onClick={() => handleViewMore(school.id)}
                   >
                     View Details

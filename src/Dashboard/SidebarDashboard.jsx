@@ -15,25 +15,25 @@ const SidebarDashboard = ({ sidebar }) => {
       <ul className="nav-links">
         <li>
           <Link to="/">
-            <i className="bx bxs-briefcase-alt-2"></i>
+            <i className="bx bxs-dashboard"></i>
             <span className="links_name">Dashboard</span>
           </Link>
         </li>
         <li>
           <Link to="/school">
-            <i className="bx bxs-briefcase-alt-2"></i>
+          <i className='bx bxs-school'></i>
             <span className="links_name">Schools</span>
           </Link>
         </li>
         <li>
           <Link to="/invoices">
-            <i className="bx bxs-briefcase-alt-2"></i>
+            <i className="bx bxs-message-square-detail"></i>
             <span className="links_name">Invoices</span>
           </Link>
         </li>
         <li>
           <Link to="/collections">
-            <i className="bx bxs-briefcase-alt-2"></i>
+            <i className="bx bxs-shopping-bag"></i>
             <span className="links_name">Collections</span>
           </Link>
         </li>

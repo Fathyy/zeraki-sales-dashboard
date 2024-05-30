@@ -33,7 +33,6 @@ const SchoolDetails = () => {
       });
   }, [schoolId]);
 
-
   const handleSaveInvoice = (newInvoice) => {
     const updatedInvoices = [...invoices, newInvoice];
     setInvoices(updatedInvoices);
@@ -41,7 +40,9 @@ const SchoolDetails = () => {
 
   const handleUpdateInvoice = (updatedInvoice) => {
     const updatedInvoices = invoices.map((invoice) =>
-      invoice.invoice_number === updatedInvoice.invoice_number ? updatedInvoice : invoice
+      invoice.invoice_number === updatedInvoice.invoice_number
+        ? updatedInvoice
+        : invoice
     );
     setInvoices(updatedInvoices);
     axios
@@ -74,7 +75,9 @@ const SchoolDetails = () => {
   };
 
   const handleDeleteInvoice = (invoiceNumber) => {
-    const updatedInvoices = invoices.filter(invoice => invoice.invoice_number !== invoiceNumber);
+    const updatedInvoices = invoices.filter(
+      (invoice) => invoice.invoice_number !== invoiceNumber
+    );
     setInvoices(updatedInvoices);
     axios
       .patch(`http://localhost:3030/schoolsDetails/${schoolId}`, {
@@ -83,7 +86,6 @@ const SchoolDetails = () => {
       .then((res) => console.log("Invoice deleted"))
       .catch((err) => console.error(err));
   };
-  
 
   return (
     <div>
@@ -94,34 +96,36 @@ const SchoolDetails = () => {
           <div className="sales-boxes responsive">
             <div className="container">
               <h5 className="mb-4">{school.name} Details</h5>
-              <table className="table table-striped table-bordered">
-                <thead className="thead-dark">
-                  <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Product</th>
-                    <th>County</th>
-                    <th>Registration Date</th>
-                    <th>Contact Information</th>
-                    <th>School Balance</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{school.name}</td>
-                    <td>{school.type}</td>
-                    <td>{school.product}</td>
-                    <td>{school.county}</td>
-                    <td>{school.registration_date}</td>
-                    <td>
-                      Email: {school.contact_info.email}
-                      <br />
-                      Phone: {school.contact_info.phone}
-                    </td>
-                    <td>${school.school_balance.toFixed(2)}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="table-responsive">
+                <table className="table table-striped table-bordered table-responsive">
+                  <thead className="thead-dark">
+                    <tr>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Product</th>
+                      <th>County</th>
+                      <th>Registration Date</th>
+                      <th>Contact Information</th>
+                      <th>School Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{school.name}</td>
+                      <td>{school.type}</td>
+                      <td>{school.product}</td>
+                      <td>{school.county}</td>
+                      <td>{school.registration_date}</td>
+                      <td>
+                        Email: {school.contact_info.email}
+                        <br />
+                        Phone: {school.contact_info.phone}
+                      </td>
+                      <td>${school.school_balance.toFixed(2)}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
               {/* Invoices for a particular school */}
               <div className="d-flex justify-content-between mt-4">
@@ -131,44 +135,51 @@ const SchoolDetails = () => {
                   onSave={handleSaveInvoice}
                 />
               </div>
-              <table className="table table-striped table-bordered">
-                <thead className="thead-dark">
-                  <tr>
-                    <th>No</th>
-                    <th>Item</th>
-                    <th>Creation Date</th>
-                    <th>Due Date</th>
-                    <th>Amount</th>
-                    <th>Paid Amount</th>
-                    <th>Balance</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {invoices.map((invoice, index) => (
-                    <tr key={index}>
-                      <td>{invoice.invoice_number}</td>
-                      <td>{invoice.item}</td>
-                      <td>{invoice.creation_date}</td>
-                      <td>{invoice.due_date}</td>
-                      <td>${invoice.amount.toFixed(2)}</td>
-                      <td>${invoice.paid_amount.toFixed(2)}</td>
-                      <td>${invoice.balance.toFixed(2)}</td>
-                      <td>{invoice.status}</td>
-                      <td>
-                        <EditInvoiceModal invoice={invoice} onSave={handleUpdateInvoice}/>
-                        <button
-                          className="btn btn-danger ml-2"
-                          onClick={() => handleDeleteInvoice(invoice.invoice_number)}
-                        >
-                          <i className="fa-solid fa-trash"></i>
-                        </button>
-                      </td>
+              <div className="table-responsive">
+                <table className="table table-striped table-bordered">
+                  <thead className="thead-dark">
+                    <tr>
+                      <th>No</th>
+                      <th>Item</th>
+                      <th>Creation Date</th>
+                      <th>Due Date</th>
+                      <th>Amount</th>
+                      <th>Paid Amount</th>
+                      <th>Balance</th>
+                      <th>Status</th>
+                      <th>Action</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {invoices.map((invoice, index) => (
+                      <tr key={index}>
+                        <td>{invoice.invoice_number}</td>
+                        <td>{invoice.item}</td>
+                        <td>{invoice.creation_date}</td>
+                        <td>{invoice.due_date}</td>
+                        <td>${invoice.amount.toFixed(2)}</td>
+                        <td>${invoice.paid_amount.toFixed(2)}</td>
+                        <td>${invoice.balance.toFixed(2)}</td>
+                        <td>{invoice.status}</td>
+                        <td>
+                          <EditInvoiceModal
+                            invoice={invoice}
+                            onSave={handleUpdateInvoice}
+                          />
+                          <button
+                            className="btn btn-danger ml-2"
+                            onClick={() =>
+                              handleDeleteInvoice(invoice.invoice_number)
+                            }
+                          >
+                            <i className="fa-solid fa-trash"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

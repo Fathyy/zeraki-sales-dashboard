@@ -85,25 +85,25 @@ const Home = () => {
           <div className="sales-boxes responsive">
             <div className="container">
               <div className="row">
-                <div className="col-md-3">
+                <div className="col-lg-3 col-md-6 mb-md-4 mb-4">
                   <div className="recent-sales box d-flex justify-content-between gap-3">
                     <BsCollection className="card-icon" />
                     <p className="card-text">{totalCollections} Collections Made</p>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-lg-3 col-md-6 mb-md-4 mb-4">
                   <div className="recent-sales box d-flex justify-content-between gap-3">
                     <SiGnuprivacyguard className="card-icon" />
                     <p className="card-text">{totalSignups} School Signups till date</p>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-lg-3 col-md-6 mb-md-4 mb-4">
                   <div className="recent-sales box d-flex justify-content-between gap-3">
                     <CiMoneyBill className="card-icon" />
                     <p className="card-text">{totalRevenue} Total Revenue Collected</p>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-lg-3 col-md-6 mb-md-4 mb-4">
                   <div className="recent-sales box d-flex justify-content-between gap-3">
                     <GrDocumentPerformance className="card-icon" />
                     <p className="card-text">10 Bounced cheques</p>
@@ -115,17 +115,14 @@ const Home = () => {
           <div className="container">
             {/* piecharts */}
             <div className="row mt-5">
-              <div className="col-md-6">
+              <div className="col-lg-6">
                 <Piecharts />
               </div>
-              <div className="col-md-6">
+              <div className="col-lg-6">
                 <BarCharts />
               </div>
             </div>
           </div>
-
-          {/* Invoices */}
-          <div className="row"></div>
         </div>
       </section>
     </div>

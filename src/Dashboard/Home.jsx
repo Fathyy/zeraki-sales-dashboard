@@ -13,26 +13,60 @@ import axios from "axios";
 const Home = () => {
   const [sidebar, setSidebar] = useState(false);
   const [totalCollections, setTotalCollections] = useState(0);
+  const [totalSignups, setTotalSignups] = useState(0);
+  const [totalRevenue, setTotalRevenue] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3030/schoolsDetails");
-        const data = response.data;
+        const responseCollections = await axios.get("http://localhost:3030/schoolsDetails");
+        const dataCollections = responseCollections.data;
+        console.log("Data fetched:", dataCollections);
         
-        // Calculate total collections
-        const total = data.schoolsDetails.reduce(
-          (total, school) => total + school.collections.length, 
-          0
-        );
+        // If data itself is the schoolsDetails array
+        let total = 0;
+        dataCollections.forEach(school => {
+          total += school.collections.length;
+        });
         setTotalCollections(total);
+
+        const responseSignups = await axios.get("http://localhost:3030/signup");
+        const dataSignups = responseSignups.data;
+
+        // Calculate total signups
+        if (dataSignups) {
+          let total = 0;
+          dataSignups.forEach(signup => {
+            total += signup.Actual;
+          });
+          setTotalSignups(total);
+        } else {
+          console.error('signup not found in the response data');
+        }
+
+        // Calculate total revenue
+        if (dataCollections) {
+          let total = 0;
+          dataCollections.forEach(school => {
+            school.invoices.forEach(invoice => {
+              total += invoice.paid_amount;
+            });
+          });
+          setTotalRevenue(total);
+        } else {
+          console.error('schoolsDetails not found in the response data');
+        }
+
+
+
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-
+  
     fetchData();
   }, []);
+  
 
   const toggleSidebar = () => {
     setSidebar(!sidebar);
@@ -60,13 +94,13 @@ const Home = () => {
                 <div className="col-md-3">
                   <div className="recent-sales box d-flex justify-content-between gap-3">
                     <SiGnuprivacyguard className="card-icon" />
-                    <p className="card-text">20 School Signups till date</p>
+                    <p className="card-text">{totalSignups} School Signups till date</p>
                   </div>
                 </div>
                 <div className="col-md-3">
                   <div className="recent-sales box d-flex justify-content-between gap-3">
                     <CiMoneyBill className="card-icon" />
-                    <p className="card-text">30 Total Revenue Collected</p>
+                    <p className="card-text">{totalRevenue} Total Revenue Collected</p>
                   </div>
                 </div>
                 <div className="col-md-3">

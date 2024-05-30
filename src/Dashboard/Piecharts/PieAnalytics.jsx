@@ -11,8 +11,6 @@ import {
 const COLORS = ["#0088FE", "#00C49F"];
 
 const PieAnalytics = ({ data }) => {
-  console.log(data);
-
   const firstEntity = data[0] || {};
 
   const chartData = [

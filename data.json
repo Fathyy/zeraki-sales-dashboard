@@ -99,6 +99,22 @@
           "balance": 0,
           "status": "Completed"
         }
+      ],
+      "collections": [
+        {
+          "invoice_number": "INV-001",
+          "collection_number": "COL-001",
+          "date_of_collection": "2023-03-15",
+          "status": "Valid",
+          "amount": 500
+        },
+        {
+          "invoice_number": "INV-002",
+          "collection_number": "COL-002",
+          "date_of_collection": "2023-03-20",
+          "status": "Bounced",
+          "amount": 1000
+        }
       ]
     },
     {
@@ -125,14 +141,30 @@
           "status": "Pending"
         },
         {
+          "invoice_number": "INV-993",
           "item": "Finance",
           "creation_date": "2024-03-15",
           "due_date": "2024-04-16",
           "amount": 3500,
           "paid_amount": 699,
           "status": "Completed",
-          "balance": 2801,
-          "invoice_number": "INV-993"
+          "balance": 2801
+        }
+      ],
+      "collections": [
+        {
+          "invoice_number": "INV-003",
+          "collection_number": "COL-004",
+          "date_of_collection": "2023-03-15",
+          "status": "Bounced",
+          "amount": 500
+        },
+        {
+          "invoice_number": "INV-993",
+          "collection_number": "COL-006",
+          "date_of_collection": "2023-03-20",
+          "status": "Valid",
+          "amount": 1000
         }
       ]
     },
@@ -150,7 +182,7 @@
       "school_balance": 1800.5,
       "invoices": [
         {
-          "invoice_number": "INV-003",
+          "invoice_number": "INV-043",
           "item": "Finance",
           "creation_date": "2023-02-10",
           "due_date": "2023-03-10",
@@ -158,6 +190,15 @@
           "paid_amount": 500,
           "balance": 250,
           "status": "Pending"
+        }
+      ],
+      "collections": [
+        {
+          "invoice_number": "INV-043",
+          "collection_number": "COL-010",
+          "date_of_collection": "2023-03-15",
+          "status": "Bounced",
+          "amount": 500
         }
       ]
     },
@@ -175,7 +216,7 @@
       "school_balance": 3000,
       "invoices": [
         {
-          "invoice_number": "INV-003",
+          "invoice_number": "INV-021",
           "item": "Finance",
           "creation_date": "2023-02-10",
           "due_date": "2023-03-10",
@@ -183,6 +224,15 @@
           "paid_amount": 500,
           "balance": 250,
           "status": "Pending"
+        }
+      ],
+      "collections": [
+        {
+          "invoice_number": "INV-021",
+          "collection_number": "COL-015",
+          "date_of_collection": "2023-03-15",
+          "status": "Bounced",
+          "amount": 500
         }
       ]
     },
@@ -200,7 +250,7 @@
       "school_balance": 1200.25,
       "invoices": [
         {
-          "invoice_number": "INV-003",
+          "invoice_number": "INV-021",
           "item": "Analytics",
           "creation_date": "2023-02-10",
           "due_date": "2023-03-10",
@@ -208,6 +258,15 @@
           "paid_amount": 500,
           "balance": 250,
           "status": "Pending"
+        }
+      ],
+      "collections": [
+        {
+          "invoice_number": "INV-021",
+          "collection_number": "COL-045",
+          "date_of_collection": "2023-03-15",
+          "status": "Bounced",
+          "amount": 500
         }
       ]
     },
@@ -225,7 +284,7 @@
       "school_balance": 2750.4,
       "invoices": [
         {
-          "invoice_number": "INV-003",
+          "invoice_number": "INV-150",
           "item": "Timetable",
           "creation_date": "2023-02-10",
           "due_date": "2023-03-10",
@@ -233,6 +292,15 @@
           "paid_amount": 500,
           "balance": 250,
           "status": "Pending"
+        }
+      ],
+      "collections": [
+        {
+          "invoice_number": "INV-150",
+          "collection_number": "COL-035",
+          "date_of_collection": "2023-03-15",
+          "status": "Bounced",
+          "amount": 500
         }
       ]
     }

@@ -17,7 +17,7 @@ const SchoolDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3030/schoolsDetails/${schoolId}`)
+      .get(`https://json-server-jq8z.onrender.com/schoolsDetails/${schoolId}`)
       .then((res) => {
         const schoolDetails = res.data;
         if (schoolDetails) {
@@ -46,7 +46,7 @@ const SchoolDetails = () => {
     );
     setInvoices(updatedInvoices);
     axios
-      .patch(`http://localhost:3030/schoolsDetails/${schoolId}`, {
+      .patch(`https://json-server-jq8z.onrender.com/schoolsDetails/${schoolId}`, {
         invoices: updatedInvoices,
       })
       .then((res) => console.log("Invoice updated"))
@@ -80,7 +80,7 @@ const SchoolDetails = () => {
     );
     setInvoices(updatedInvoices);
     axios
-      .patch(`http://localhost:3030/schoolsDetails/${schoolId}`, {
+      .patch(`https://json-server-jq8z.onrender.com/schoolsDetails/${schoolId}`, {
         invoices: updatedInvoices,
       })
       .then((res) => console.log("Invoice deleted"))

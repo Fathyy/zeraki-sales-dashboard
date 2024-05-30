@@ -14,7 +14,7 @@ const Invoices = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3030/schoolsDetails")
+      .get("https://json-server-jq8z.onrender.com/schoolsDetails")
       .then((response) => {
         const schools = response.data;
         const allInvoices = schools.flatMap((school) =>

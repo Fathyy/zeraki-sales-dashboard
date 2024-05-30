@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseCollections = await axios.get("http://localhost:3030/schoolsDetails");
+        const responseCollections = await axios.get("https://json-server-jq8z.onrender.com/schoolsDetails");
         const dataCollections = responseCollections.data;
         console.log("Data fetched:", dataCollections);
         
@@ -30,7 +30,7 @@ const Home = () => {
         });
         setTotalCollections(total);
 
-        const responseSignups = await axios.get("http://localhost:3030/signup");
+        const responseSignups = await axios.get("https://json-server-jq8z.onrender.com/signup");
         const dataSignups = responseSignups.data;
 
         // Calculate total signups

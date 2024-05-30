@@ -9,7 +9,7 @@ const Piecharts = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3030/signup")
+      .get("https://json-server-jq8z.onrender.com/signup")
       .then((res) => setSignupData(res.data))
       .catch((err) => console.log(err));
   }, []);

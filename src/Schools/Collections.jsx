@@ -15,7 +15,7 @@ const Collections = () => {
   useEffect(() => {
     // Fetch all school details
     axios
-      .get(`http://localhost:3030/schoolsDetails`)
+      .get(`https://json-server-jq8z.onrender.com/schoolsDetails`)
       .then((response) => {
         const schools = response.data;
         // Extract all collections from the schools data
@@ -44,7 +44,7 @@ const Collections = () => {
       (c) => c.collection_number === collectionNumber
     );
     if (collectionToUpdate) {
-      axios.get(`http://localhost:3030/schoolsDetails`).then((response) => {
+      axios.get(`https://json-server-jq8z.onrender.com/schoolsDetails`).then((response) => {
         const schools = response.data;
         const school = schools.find((s) =>
           s.collections.some((c) => c.collection_number === collectionNumber)
@@ -56,7 +56,7 @@ const Collections = () => {
               : c
           );
           axios
-            .patch(`http://localhost:3030/schoolsDetails/${school.id}`, {
+            .patch(`https://json-server-jq8z.onrender.com/schoolsDetails/${school.id}`, {
               collections: updatedSchoolCollections,
             })
             .then((res) => console.log("Collection status updated"))

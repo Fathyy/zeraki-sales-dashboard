@@ -41,13 +41,13 @@ const CreateInvoiceModal = ({ schoolId, onSave }) => {
       balance: invoice.amount - invoice.paid_amount,
     };
     axios
-      .get(`http://localhost:3030/schoolsDetails/${schoolId}`)
+      .get(`https://json-server-jq8z.onrender.com/schoolsDetails/${schoolId}`)
       .then((res) => {
         const school = res.data;
         const updatedInvoices = [...school.invoices, newInvoice];
 
         axios
-          .patch(`http://localhost:3030/schoolsDetails/${schoolId}`, {
+          .patch(`https://json-server-jq8z.onrender.com/schoolsDetails/${schoolId}`, {
             invoices: updatedInvoices,
           })
           .then((res) => {

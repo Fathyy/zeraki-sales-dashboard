@@ -9,7 +9,7 @@ const SchoolListTable = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3030/schools")
+      .get("https://json-server-jq8z.onrender.com/schools")
       .then((res) => {
         setSchoolsData(res.data);
       })
